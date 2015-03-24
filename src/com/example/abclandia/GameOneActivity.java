@@ -19,20 +19,14 @@ package com.example.abclandia;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.GridView;
-import com.example.abclandia.audio.Audio;
-import com.example.abclandia.graphics.LetterImageRenderer;
 import com.example.abclandia.graphics.JustImageRenderer;
 import com.example.abclandia.graphics.JustLetterRenderer;
+import com.example.abclandia.graphics.LetterImageRenderer;
 import com.frba.abclandia.R;
 import com.frba.abclandia.adapters.CardViewAdapter;
 import com.frba.abclandia.dragdrop.DragController;
 import com.frba.abclandia.dragdrop.DragLayer;
-
-
-
 
 
 public class GameOneActivity extends GameActivity 
@@ -43,15 +37,10 @@ public class GameOneActivity extends GameActivity
 	private GridView mGridViewLeft;
 	private GridView mGridViewRight;
 	
-	
-	
 	private static String CLASS_NAME = "com.example.abclandia.GameOneActivity";
 	private static int GAME_NUMBER = 1;
 	
-
-	
-
-    /**
+	/**
      * Called when the activity is first created.
      */
 	@Override
@@ -62,18 +51,13 @@ public class GameOneActivity extends GameActivity
 		mTotalJoins = TOTAL_JOINS;
 		super.onCreate(savedInstanceState);
 
-	
-		
-		
 		setContentView(R.layout.game_one_activity);
+		
 		mDragController = new DragController(this);
 		mDragLayer = (DragLayer) findViewById(R.id.drag_layer);
 		mDragLayer.setBackgroundColor(Color.parseColor("#CCCAEA"));
 		mDragLayer.setDragController(mDragController);
 		mDragController.setDragListener(mDragLayer);
-	
-
-	
 	
 		mAudio.loadLetterSoungs(data);
 	

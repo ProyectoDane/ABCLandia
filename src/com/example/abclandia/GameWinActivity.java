@@ -15,9 +15,6 @@ import android.widget.ImageButton;
 public class GameWinActivity extends Activity {
 	
 	private Class<?> classLauncher;
-	protected int unMaestro;
-	protected int unAlumno;
-	protected int unaCategoria;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +37,6 @@ public class GameWinActivity extends Activity {
 			public void onClick(View v) {
 				
 				Intent intent = new Intent(GameWinActivity.this, ActividadesActivity.class);
-				intent.putExtra("unMaestro", unMaestro);
-				intent.putExtra("unAlumno", unAlumno);
-				intent.putExtra("unaCategoria", unaCategoria);
 				
 				startActivity(intent);
 				finish();
@@ -59,9 +53,6 @@ public class GameWinActivity extends Activity {
 				Intent intent = new Intent(GameWinActivity.this, classLauncher);
 				intent.putExtra(GameActivity.INTENT_LEVEL_KEY, 1);
 				intent.putExtra(GameActivity.INTENT_SECUENCE_KEY, 1);
-				intent.putExtra("unMaestro", unMaestro);
-				intent.putExtra("unAlumno", unAlumno);
-				intent.putExtra("unaCategoria", unaCategoria);
 				
 				startActivity(intent);
 				finish();
@@ -76,9 +67,7 @@ public class GameWinActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
 	
 		if (extras != null) {
-			unMaestro = extras.getInt("unMaestro", 0);
-			unAlumno = extras.getInt("unAlumno", 0);
-			unaCategoria = extras.getInt("unaCategoria", 0);
+			
 
 			try {
 				classLauncher = Class.forName(extras

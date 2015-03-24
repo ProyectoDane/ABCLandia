@@ -14,13 +14,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-import com.frba.abclandia.webserver.ABCLandiaRestServer;
-
 public class LoginActivity extends Activity {
 	private static String PREFERENCE_NAME = "com.frba.abclandia";
 	enum Answer { YES, NO, ERROR, NULL};
 	Answer respuesta = Answer.NULL;
-	ABCLandiaRestServer server;
+	
 	SharedPreferences preferences;
 	public boolean showMessageMaestro, showMessagePadre;
 	
@@ -50,8 +48,8 @@ public class LoginActivity extends Activity {
 		if (showMessageMaestro)
 			showMsgDialogMaestro(this);
 		else{
-			Intent intent = new Intent(this, MaestrosActivity.class);
-    		startActivity(intent);
+//			Intent intent = new Intent(this, MaestrosActivity.class);
+//    		startActivity(intent);
 		}
 	}
 	
@@ -129,8 +127,8 @@ public class LoginActivity extends Activity {
 		dlgMensaje.setPositiveButton(R.string.msgAceptar,  new DialogInterface.OnClickListener() {
 	        public void onClick(DialogInterface dialog, int which) {
 	        	respuesta = Answer.YES;
-	        	Intent intent = new Intent(self, MaestrosActivity.class);
-	    		startActivity(intent);
+//	        	Intent intent = new Intent(self, MaestrosActivity.class);
+//	    		startActivity(intent);
 	          }
 	      });
 		dlgMensaje.setCancelable(true);

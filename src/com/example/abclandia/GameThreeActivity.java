@@ -20,15 +20,11 @@ public class GameThreeActivity extends GameActivity {
 	private GridView mGridViewLeft;
 	private GridView mGridViewRight;
 	
-	
-	
 	private static String CLASS_NAME = "com.example.abclandia.GameThreeActivity";
 	private static int GAME_NUMBER = 3;
 	
 
-	
-
-    /**
+	/**
      * Called when the activity is first created.
      */
 	@Override
@@ -39,9 +35,6 @@ public class GameThreeActivity extends GameActivity {
 		mTotalJoins = TOTAL_JOINS;
 		super.onCreate(savedInstanceState);
 
-	
-		
-		
 		setContentView(R.layout.game_one_activity);
 		mDragController = new DragController(this);
 		mDragLayer = (DragLayer) findViewById(R.id.drag_layer);
@@ -60,11 +53,11 @@ public class GameThreeActivity extends GameActivity {
 	
 
 		mDragLayer = (DragLayer) findViewById(R.id.drag_layer);
-		
 		mDragLayer.setDragController(mDragController);
 		mDragLayer.setBackgroundColor(Color.parseColor("#F7B3A9"));
 		mDragLayer.setGridViewLeft(mGridViewLeft);
 		mDragLayer.setGridViewRight(mGridViewRight);
+		
 		mDragController.setDragListener(mDragLayer);
 		
 		mDroppedRenderer = new ImageWordRenderer(this);

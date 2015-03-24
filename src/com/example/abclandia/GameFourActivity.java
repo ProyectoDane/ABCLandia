@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.widget.GridView;
-
 import com.example.abclandia.graphics.JustLetterRenderer;
 import com.example.abclandia.graphics.JustWordRenderer;
 import com.example.abclandia.graphics.LetterWordRenderer;
@@ -43,9 +42,6 @@ public class GameFourActivity extends GameActivity {
 		mGridViewRight = (GridView) findViewById(R.id.gridViewRight);
 		((GradientDrawable) mGridViewRight.getBackground()).setColor(Color.parseColor("#F4B8DC"));
 		
-		
-		
-		
 		mGridViewLeft.setAdapter(new CardViewAdapter(data, this,
 				new JustLetterRenderer(this), R.layout.game_four_five_card_view, false));
 		Renderer justWordRenderer = new JustWordRenderer(this);
@@ -53,7 +49,6 @@ public class GameFourActivity extends GameActivity {
 		mGridViewRight.setAdapter(new CardViewAdapter(data, this,
 				justWordRenderer, R.layout.game_four_five_card_view, false));
 
-		
 		mDragController = new DragController(this);
 		mDragLayer = (DragLayer) findViewById(R.id.drag_layer);
 		mDragLayer.setDragController(mDragController);
@@ -62,12 +57,10 @@ public class GameFourActivity extends GameActivity {
 		mDragLayer.setGridViewLeft(mGridViewLeft);
 		mDragLayer.setGridViewRight(mGridViewRight);
 
-		
-
 		mAudio.loadLetterSoungs(data);
 		mDroppedRenderer = new LetterWordRenderer(this);
 		mDroppedRenderer.setRectangleColorBorder(Color.GREEN);
-//		mDroppedRenderer.setWordFormatter(new StringWithoutFirstLetter());
+		
 	}
 	
 

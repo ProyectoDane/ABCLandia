@@ -17,10 +17,6 @@ public class WinActivity extends Activity {
 	int gameLevel;
 	int gameSecuence;
 	Class<?> classLauncher;
-	// Definimos las variables para saber que Maestro, Alumno y Categoria estan involucrados. 
-	protected int unMaestro = 0;
-	protected int unAlumno = 0;
-	protected int unaCategoria = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +41,6 @@ public class WinActivity extends Activity {
 
 				intent.putExtra(GameActivity.INTENT_LEVEL_KEY, gameLevel);
 				intent.putExtra(GameActivity.INTENT_SECUENCE_KEY, gameSecuence);
-				intent.putExtra("unMaestro", unMaestro);
-				intent.putExtra("unAlumno", unAlumno);
-				intent.putExtra("unaCategoria", unaCategoria);
 
 				startActivity(intent);
 				finish();
@@ -61,9 +54,7 @@ public class WinActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
 	
 		if (extras != null) {
-			unMaestro = extras.getInt("unMaestro", 0);
-			unAlumno = extras.getInt("unAlumno", 0);
-			unaCategoria = extras.getInt("unaCategoria", 0);
+			
 			gameNumber = extras.getInt(GameActivity.INTENT_EXERCISE_NUMBER, 1);
 			gameLevel = extras.getInt(GameActivity.INTENT_LEVEL_KEY);
 			gameSecuence = extras.getInt(GameActivity.INTENT_SECUENCE_KEY);

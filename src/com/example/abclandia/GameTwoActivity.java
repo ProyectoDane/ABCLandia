@@ -20,15 +20,11 @@ public class GameTwoActivity extends GameActivity {
 	private GridView mGridViewLeft;
 	private GridView mGridViewRight;
 	
-	
-	
 	private static String CLASS_NAME = "com.example.abclandia.GameTwoActivity";
 	private static int GAME_NUMBER = 2;
 	
 
-	
-
-    /**
+	/**
      * Called when the activity is first created.
      */
 	@Override
@@ -39,22 +35,16 @@ public class GameTwoActivity extends GameActivity {
 		mTotalJoins = TOTAL_JOINS;
 		super.onCreate(savedInstanceState);
 
-	
-		
-		
 		setContentView(R.layout.game_one_activity);
+		
 		mDragController = new DragController(this);
 		mDragLayer = (DragLayer) findViewById(R.id.drag_layer);
 		mDragLayer.setDragController(mDragController);
 		mDragLayer.setBackgroundColor(Color.parseColor("#78EACA"));
 		mDragController.setDragListener(mDragLayer);
 	
-
-	
-	
 		mAudio.loadLetterSoungs(data);
 	
-
 		mGridViewLeft = (GridView) findViewById(R.id.gridViewLeft);
 		((GradientDrawable) mGridViewLeft.getBackground()).setColor(Color.parseColor("#F7D9A4"));
 		mGridViewRight = (GridView) findViewById(R.id.gridViewRight);
@@ -67,11 +57,11 @@ public class GameTwoActivity extends GameActivity {
 		mGridViewRight.setAdapter(new CardViewAdapter(data, this,
 				new JustWordRenderer(this), R.layout.game_one_card_view, false));
 	
-
 		mDragLayer = (DragLayer) findViewById(R.id.drag_layer);
 		mDragLayer.setDragController(mDragController);
 		mDragLayer.setGridViewLeft(mGridViewLeft);
 		mDragLayer.setGridViewRight(mGridViewRight);
+		
 		mDragController.setDragListener(mDragLayer);
 		
 		mDroppedRenderer = new LetterWordRenderer(this);
@@ -79,6 +69,4 @@ public class GameTwoActivity extends GameActivity {
 
 	}
 	
-
-
 }

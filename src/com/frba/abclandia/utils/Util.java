@@ -1,10 +1,14 @@
 package com.frba.abclandia.utils;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.TranslateAnimation;
 
@@ -65,11 +69,16 @@ public class Util {
 		
 	}
 	
-//	public static void setFullScreen(Context context){
-//		context.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//		mWindowManager = (WindowManager) getSystemService("window");
-//	}
+	public static Bitmap getBitmapFromAsset(AssetManager assetManager, String strName)
+    {
+        InputStream istr = null;
+        try {
+            istr = assetManager.open(strName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Bitmap bitmap = BitmapFactory.decodeStream(istr);
+        return bitmap;
+    }
 
 }

@@ -2,13 +2,10 @@ package com.example.abclandia.graphics;
 
 import android.content.ClipData;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Paint.Align;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
@@ -16,9 +13,7 @@ import android.widget.GridView;
 
 import com.example.abclandia.Card;
 import com.example.abclandia.GameActivity;
-import com.example.abclandia.GameOneActivity;
 import com.example.abclandia.GameSixActivity;
-import com.frba.abclandia.R;
 import com.frba.abclandia.adapters.CardViewAdapter;
 import com.frba.abclandia.dragdrop.DragShadow;
 import com.frba.abclandia.dragdrop.DragSource;
@@ -27,12 +22,7 @@ import com.frba.abclandia.utils.Util;
 
 
 
-
-
-
-
 public class CardView extends View implements DragSource, DropTarget {
-	
 	
 	private Card mCard;
 	private Renderer mRenderer;
@@ -46,39 +36,30 @@ public class CardView extends View implements DragSource, DropTarget {
 	private boolean firstMatching = false;
 
 	private Bitmap imageBitmap; 
-	 
-	 public boolean mEmpty = true;
-	 public CardViewAdapter mAdapter;
+	
+	public boolean mEmpty = true;
+	public CardViewAdapter mAdapter;
 	
 	 
-
-	
-	
-
 
 	public CardView(Context context) {
 		super(context);
-		
 	}
 	
 	public CardView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         mContext =  context;
-
-
-
-
-     
-    }
+	}
 	
 	public int getCardId(){
 		return mCard.getId();
 	}
+	
 	public String getCardLetter(){
 		return mCard.getLetter();
-		
 	}
+	
 	public boolean isEmptyCard(){
 		return mCard.isEmptyCard();
 	}
@@ -89,7 +70,8 @@ public class CardView extends View implements DragSource, DropTarget {
 	
 	public void createImageBitmap(boolean imageAttached){
 		if (!mCard.isEmptyCard() && imageAttached)
-			imageBitmap = BitmapFactory.decodeFile(mCard.getImagePath());
+			imageBitmap = Util.getBitmapFromAsset(mContext.getAssets(), mCard.getImagePath());
+			
 		
 	}
 	public void setRenderer(Renderer renderer){
@@ -119,9 +101,6 @@ public class CardView extends View implements DragSource, DropTarget {
 	}
 	
 	
-	
-
-	
 	@Override
 	protected void onDraw(Canvas canvas) {
 		   super.onDraw(canvas);
@@ -131,8 +110,8 @@ public class CardView extends View implements DragSource, DropTarget {
 		
 		   mRenderer.Render(canvas, rectangleWidth, rectangleHeight, mRectanglePaint, 
 				   	mTextPaint, mCard, imageBitmap);
-	
 	}
+	
 	@Override 
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
 	   super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -157,7 +136,6 @@ public class CardView extends View implements DragSource, DropTarget {
 		return null;
 	}
 	
-	
 	@Override
 	public View dragDropView() {
 		return this;
@@ -169,7 +147,6 @@ public class CardView extends View implements DragSource, DropTarget {
 	 */
 	@Override
 	public void onDragStarted() {
-		
 		setVisibility(View.GONE);		
 	}
 
@@ -180,7 +157,6 @@ public class CardView extends View implements DragSource, DropTarget {
 		} else {
 			isDropTarget = false;
 		}
-		
 	}
 
 	@Override
@@ -198,14 +174,9 @@ public class CardView extends View implements DragSource, DropTarget {
 				this.mAllowDrag = false;
 			}
 				
-			
 			invalidate();
-			
-
 	}
 	
-	
-
 	@Override
 	public void onDragEnter(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragShadow dragView, Object dragInfo) {
@@ -218,14 +189,12 @@ public class CardView extends View implements DragSource, DropTarget {
 	public void onDragOver(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragShadow dragView, Object dragInfo) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void onDragExit(DragSource source, int x, int y, int xOffset,
 			int yOffset, DragShadow dragView, Object dragInfo) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -244,7 +213,6 @@ public class CardView extends View implements DragSource, DropTarget {
 		
 		
 		}
-
 	}
 
 	@Override
@@ -258,23 +226,20 @@ public class CardView extends View implements DragSource, DropTarget {
 	private boolean validateMatchingExcersiseSix(CardView cardViewSource){
 		if (this.getCardId() != cardViewSource.getCardId()){
 			return false;
-		}else {
+		} else {
 			GridView targetCardContainer = (GridView) this.getParent();
 			GridView sourceCardContainer = (GridView) cardViewSource.getParent();
 			String tagTarget = targetCardContainer.getTag().toString();
 			String tagSource = sourceCardContainer.getTag().toString();
 			if (tagTarget.equals("center") && tagSource.equals("left") || 
 					tagTarget.equals("left") && tagSource.equals("center") ){
-				
-				return true;
+					return true;
 			} else if (this.firstMatching == true || cardViewSource.firstMatching == true){
 					return true;
 			}
 					else return false;
-			
-//		 
 		}
 		
-		}
+	}
 	
 }

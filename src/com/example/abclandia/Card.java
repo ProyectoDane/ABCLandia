@@ -2,7 +2,6 @@ package com.example.abclandia;
 
 public class Card {
 	
-	
 	private static int UPPERCASE_LETTER = 1;
 	private static int LOWERCASE_LETTER = 2;
 	private static int UPPERlOWERCASE_LETTER = 3;
@@ -11,8 +10,8 @@ public class Card {
 	private String mWord;
 	private String mLetter;
 	private String mImagePath;
-	private String mSoundWordPath;
-	private String mSoundLetterPath;
+	
+	
 	
 	private boolean isLowerUpperLetter = false;
 		
@@ -25,15 +24,14 @@ public class Card {
 		mLetter = letter;
 		mWord = word;
 		mImagePath = imagePath;
-		mSoundWordPath = soundWordPath; 
-		mSoundLetterPath = soundLetterPath;
+		
 	}
 	public Card (int id, String letter, String word, String imagePath, String soundWordPath){
 		mId = id;
 		mLetter = letter;
 		mWord = word;
 		mImagePath = imagePath;
-		mSoundWordPath = soundWordPath; 
+		 
 		
 	}
 	
@@ -50,13 +48,6 @@ public class Card {
 	}
 	public String getImagePath(){
 		return mImagePath;
-	}
-	public String getSoundWordPath(){
-		return mSoundWordPath;
-	}
-	
-	public String getSoundLetterPath(){
-		return mSoundLetterPath;
 	}
 	
 	public boolean isEmptyCard(){

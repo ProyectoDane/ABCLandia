@@ -3,20 +3,17 @@ package com.frba.abclandia.adapters;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-
 import com.example.abclandia.Card;
 import com.example.abclandia.GameActivity;
 import com.example.abclandia.GameSixActivity;
 import com.example.abclandia.graphics.CardView;
 import com.example.abclandia.graphics.EmptyRenderer;
 import com.example.abclandia.graphics.Renderer;
-import com.frba.abclandia.R;
 
 
 
@@ -26,8 +23,9 @@ public class CardViewAdapter extends BaseAdapter {
 	 private Renderer mEmptyRenderer;
 	 private int mLayoutCardView;
 	 private boolean mImageAttached = false;
+	 private Context mContext;
+	 private View.OnDragListener mDragListener;
 	 int j =1;
-	 
 	 
 	 
 	public List<Card> getmData() {
@@ -37,12 +35,8 @@ public class CardViewAdapter extends BaseAdapter {
 		this.mData = mData;
 	}
 
-	private Context mContext;
-	private View.OnDragListener mDragListener;
-
 	public CardViewAdapter(List<Card> data, Context context, Renderer renderer, int layoutCardView,
 					boolean imageAttached) {
-		
 		
 		mContext = context;
 		adaptDataToScreen(data);
@@ -56,7 +50,6 @@ public class CardViewAdapter extends BaseAdapter {
 	@Override
 	public int getCount() {
 		return mData.size();
-
 	}
 
 	@Override
