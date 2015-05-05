@@ -70,12 +70,25 @@ public class GameActivity extends Activity implements View.OnTouchListener,
 		setSounds();
 		
 	}
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		final Handler handler = new Handler();
+		handler.postDelayed(new Runnable() {
+		  @Override
+		  public void run() {
+			  mAudio.playInstruction(mGameNumber);
+		  }
+		}, 2000);
+		
+	}
 
 	protected void setSounds() {
 		mAudio = new Audio(this);
 		mAudio.loadWordSounds(data);
-	
 		mAudio.loadDefaultSounds();
+		mAudio.loadInstructionSound(mGameNumber);
 	}
 
 	protected void setFullScreen() {

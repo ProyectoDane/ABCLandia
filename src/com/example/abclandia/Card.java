@@ -75,5 +75,9 @@ public class Card {
 		mLetter = letter;
 	}
 	
+	public void setId(int id){
+		mId = id;
+	}
+	
 
 }

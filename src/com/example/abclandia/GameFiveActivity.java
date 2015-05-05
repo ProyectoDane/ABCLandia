@@ -63,7 +63,6 @@ public class GameFiveActivity extends GameActivity {
 		mDragLayer.setGridViewRight(mGridViewRight);
 
 		
-
 		mAudio.loadLetterSoungs(data);
 		mDroppedRenderer = new LetterWordRenderer(this);
 		mDroppedRenderer.setRectangleColorBorder(Color.GREEN);
@@ -73,7 +72,9 @@ public class GameFiveActivity extends GameActivity {
 	private void changeFirsLetter(){
 		for (Card card : data){
 			String word = card.getWord();
-			 card.setLetter(word.substring(word.length()-1, word.length()));
+			String letter = word.substring(word.length()-1, word.length());
+			 card.setLetter(letter);
+			 card.setId(GameDataStructure.GetLetterId(letter.toLowerCase().charAt(0)));
 		   
 		}
 	}

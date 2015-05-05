@@ -222,6 +222,10 @@ public class GameDataStructure {
 		return data;
 	}
 	
+	public static int GetLetterId(Character letter){
+		return letterIds.get(letter);
+	}
+	
 	public static List<Card> LoadDataCard(char[] secuence){
 		
 		List<Card> data = new ArrayList<Card>();

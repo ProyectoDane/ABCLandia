@@ -2,16 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.frba.abclandia.MainActivity"
-    android:background="#FFFFFFFF" >
+    tools:context="com.frba.abclandia.MainActivity" >
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="409dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/logosplash"
-        android:src="@drawable/splashlogo" />
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_screen" />
 
 </RelativeLayout>

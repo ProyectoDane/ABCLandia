@@ -75,6 +75,16 @@ public class Audio {
 				mSoundPool.load(mContext, R.raw.correct, 1));
 		mSoundMap.put(SOUND_FX_COMPLETE,
 				mSoundPool.load(mContext, R.raw.complete, 1));
+		
+	}
+	
+	public void loadInstructionSound(int gameNumber){
+		loadSoundFromAssets("sonidos/instrucciones/", "instruction", gameNumber);
+		
+	}
+	
+	public void playInstruction(Integer gameNumber){
+		playSound("instruction" + gameNumber);
 	}
 
 	public void playCorrectSound() {
