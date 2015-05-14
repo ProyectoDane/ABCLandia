@@ -1,16 +1,16 @@
 package com.example.abclandia;
 
-import com.frba.abclandia.ActividadesActivity;
-import com.frba.abclandia.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.View.OnClickListener;
-import android.widget.ImageButton;
+import android.widget.Button;
+
+import com.frba.abclandia.ActividadesActivity;
+import com.frba.abclandia.R;
 
 public class GameWinActivity extends Activity {
 	
@@ -27,11 +27,11 @@ public class GameWinActivity extends Activity {
 		
 		setContentView(R.layout.game_win_activity);
 
-		ImageButton btnMenu = (ImageButton) findViewById(R.id.btnMenu);
-		ImageButton btnVolverAJugar = (ImageButton) findViewById(R.id.btnVolverAJugar);
+		Button btnBackToMenu = (Button) findViewById(R.id.btnBackToMenu);
+		Button btnPlayAgain = (Button) findViewById(R.id.btnPlayAgain);
 		
 		getExtraData();
-		btnMenu.setOnClickListener(new OnClickListener() {
+		btnBackToMenu.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -44,7 +44,7 @@ public class GameWinActivity extends Activity {
 
 			}
 		});
-		btnVolverAJugar.setOnClickListener(new OnClickListener() {
+		btnPlayAgain.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {

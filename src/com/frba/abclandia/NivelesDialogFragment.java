@@ -62,7 +62,7 @@ public class NivelesDialogFragment extends DialogFragment implements View.OnClic
       if (getDialog() == null)
         return;
 
-      int dialogWidth =Util.getTextSizeDensityDependent(getActivity(), 670);
+      int dialogWidth =Util.getTextSizeDensityDependent(getActivity(),680 );
       int dialogHeight =Util.getTextSizeDensityDependent(getActivity(), 400);; 
 
       getDialog().getWindow().setLayout(dialogWidth, dialogHeight);
@@ -81,10 +81,6 @@ public class NivelesDialogFragment extends DialogFragment implements View.OnClic
 			level = 3;
 		
 		((DialogLevelListener) getActivity()).onChooseLevel(level);
-		
-		
-		
-		
 		
 	}
 

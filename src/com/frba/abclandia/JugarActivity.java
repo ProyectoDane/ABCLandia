@@ -113,6 +113,7 @@ public class JugarActivity extends Activity
 		
 		
 		startActivity(intent);
+		finish();
 		
 	}
 	

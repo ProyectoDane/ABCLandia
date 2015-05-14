@@ -9,35 +9,10 @@
     <string name="login_maestro">Maestro</string>
     <string name="login_padre">Padre</string>
     <string name="title_activity_maestro_list">Listado de Maestros</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_gadorcha">GadorchaActivity</string>
     <string name="logoutn">UTN FRBA</string>
-    <string name="msgPadre">Queridos padres:\nEsta aplicación está pensada para niños de nivel inicial y 
-        					primer ciclo de primaria, que recién están aprendiendo las letras del abecedario. 
-        					Es necesario que se trabajen las letras utilizando solo el sonido de las mismas no 
-        					el nombre de la letra.\nEste aplicativo tiene varios ejercicios que estimulan 
-        					desde lo visual y lo auditivo el 
-							desarrollo de la conciencia fonológica y la asociación fonema grafema, ambas 
-							habilidades necesarias para el aprendizaje de la lectoescritura.\nEs un ejercicio
-							 que complementa el trabajo de los docentes y profesionales de la 
-							educación que enseñan y ejercitan estos conceptos. El objetivo principal es el 
-							aprendizaje, para tal fin es fundamental que cada actividad del aplicativo esté 
-							guiada por un profesional competente.\nUstedes papas pueden acompañar estos nuevos
-							 conceptos permitiendo que sus hijos usen este aplicativo en casa, orientados por los docentes y profesionales que 
-							trabajan con sus hijos. </string>
-    <string name="msgMaestro">Queridos docentes:\nEsta aplicación es una herramienta pensada para complementar 
-        					la práctica en la enseñanza de cada letra del abecedario. Tiene varios ejercicios
-        					 para desarrollar la conciencia fonológica en su reconocimiento de  fonema inicial
-        					y final.\nSe usan siempre los mismos objetos asociados para cada letra para 
-        					fortalecer el concepto de las mismas, la discriminación auditiva y la asociación
-        					 fonema grafema.\nLos lineamientos teóricos que la sustenta son propios de las
-        					  neurociencias, destinados a trabajar un concepto pedagógico desarrollando
-        					   habilidades cognitivasque los sustentan.\nPor las características del aplicativo,
-        					    los niños a los cuales está destinada la actividad deben estar cursando la 
-        					    sala de 4 o 5 del nivel inicial o el primer ciclo de primaria.\nSe puede usar
-        					     como actividad de
-        					      repaso complementando otras realizadas con diferentes materiales.</string>
+    
     <string name="msgAceptar">Aceptar</string>
     <string name="msgCancelar">Cancelar</string>
     <string name="title_activity_jugar">Juegos</string>
@@ -50,6 +25,8 @@
     <string name="imgAlumno">Icono del Alumno</string>
     <string name="nombreRow">Nombre</string>
     <string name="apellidoRow">Apellido</string>
-    <string name="chechbox_message">No volver a mostrar este mensaje</string>
+    <string name="playAgain">Volver a jugar</string>
+    <string name="BackToMenu">Salir</string>
+ 
 
 </resources>

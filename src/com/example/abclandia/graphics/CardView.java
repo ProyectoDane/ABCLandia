@@ -204,7 +204,7 @@ public class CardView extends View implements DragSource, DropTarget {
 		if (isDoubleMatching){
 			return validateMatchingExcersiseSix(cardViewSource);
 		} else {
-			if (this.getCardId() == cardViewSource.getCardId()){
+			if (this.getCardLetter().equalsIgnoreCase(cardViewSource.getCardLetter())){
 				return true;
 			}else {
 				return false;

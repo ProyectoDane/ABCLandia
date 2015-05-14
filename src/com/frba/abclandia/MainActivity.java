@@ -12,7 +12,7 @@ import android.view.WindowManager;
 
 public class MainActivity extends Activity {
 	private static final String PREFERENCE_NAME = "com.frba.abclandia";
-	private static final int DISPLAY = 3000;
+	private static final int DISPLAY = 3500;
 	SharedPreferences preferences = null;
 	String TARGET_BASE_PATH;
 	

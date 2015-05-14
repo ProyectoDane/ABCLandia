@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bgsplash" >
+    android:layout_height="match_parent" >
 
-        <ImageButton
-            android:id="@+id/btnVolverAJugar"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/logosplash"
+        android:scaleType="fitXY"
+        android:src="@drawable/game_win" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp" >
+
+        <Button
+            android:id="@+id/btnBackToMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="59dp"
-            android:src="@drawable/btnotravez" />
+            android:background="@drawable/btn_actividades_7_shape"
+            android:text="@string/BackToMenu"
+            android:textSize="40sp" />
 
-        <ImageButton
-            android:id="@+id/btnMenu"
+        <Button
+            android:id="@+id/btnPlayAgain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/btnVolverAJugar"
-            android:layout_marginRight="122dp"
-            android:src="@drawable/btnmenu" />
+            android:layout_marginLeft="55dp"
+            android:layout_toRightOf="@id/btnBackToMenu"
+            android:background="@drawable/btn_actividades_7_shape"
+            android:text="@string/playAgain"
+            android:textSize="40sp" />
+    </RelativeLayout>
 
 </RelativeLayout>

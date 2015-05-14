@@ -13,11 +13,13 @@ import android.content.res.AssetFileDescriptor;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import com.example.abclandia.Card;
+import com.example.abclandia.GameDataStructure;
 import com.frba.abclandia.R;
 
 public class Audio {
 	private static final String SOUND_FX_CORRECT = "correct";
 	private static final String SOUND_FX_COMPLETE = "complete";
+	private static final String SOUND_FX_WINNING = "wining";
 	private static final String SOUND_FX_WIN = "win";
 	private static final String PLUS_ID_WORD = "0";
 	private static final String PLUS_ID_LETTER = "1";
@@ -46,7 +48,8 @@ public class Audio {
 	public void loadLetterSoungs(List<Card> cards) {
 
 		for (Card card : cards) {
-			loadSoundFromAssets("sonidos/letras/", "l", card.getId());
+			int cardId = GameDataStructure.GetLetterId(card.getLetter().toLowerCase().charAt(0));
+			loadSoundFromAssets("sonidos/letras/", "l", cardId);
 		}
 	}
 	
@@ -73,8 +76,10 @@ public class Audio {
 	public void loadDefaultSounds() {
 		mSoundMap.put(SOUND_FX_CORRECT,
 				mSoundPool.load(mContext, R.raw.correct, 1));
+		mSoundMap.put(SOUND_FX_WINNING,
+				mSoundPool.load(mContext, R.raw.winning, 1));
 		mSoundMap.put(SOUND_FX_COMPLETE,
-				mSoundPool.load(mContext, R.raw.complete, 1));
+				mSoundPool.load(mContext, R.raw.complete_secuence, 1));
 		
 	}
 	
@@ -93,6 +98,10 @@ public class Audio {
 	
 	public void playCompleteSound() {
 		playSound(SOUND_FX_COMPLETE);
+	}
+	
+	public void playWinningSound(){
+		playSound(SOUND_FX_WINNING);
 	}
 	
 	private void playSound(String soundId){

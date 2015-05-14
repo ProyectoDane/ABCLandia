@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.widget.GridView;
+
+import com.example.abclandia.graphics.CardView;
 import com.example.abclandia.graphics.JustLetterRenderer;
 import com.example.abclandia.graphics.JustWordRenderer;
 import com.example.abclandia.graphics.LetterWordRenderer;
@@ -74,9 +76,21 @@ public class GameFiveActivity extends GameActivity {
 			String word = card.getWord();
 			String letter = word.substring(word.length()-1, word.length());
 			 card.setLetter(letter);
-			 card.setId(GameDataStructure.GetLetterId(letter.toLowerCase().charAt(0)));
 		   
 		}
+	}
+	
+	protected void playCardSound(CardView cardView){
+		Class<?> rendererClass = cardView.getRenderer().getClass();
+		
+		if (rendererClass == JustLetterRenderer.class){
+			int cardId = GameDataStructure.GetLetterId(cardView.getCardLetter().toLowerCase().charAt(0));
+			mAudio.playSoundLetter(cardId);
+			
+		} else 
+			mAudio.playSoundWord(cardView.getCardId());
+		
+		
 	}
 
 }
