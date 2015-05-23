@@ -51,7 +51,10 @@ public class GameActivity extends Activity implements View.OnTouchListener,
 
 	private WindowManager.LayoutParams mWindowParams;
 	private WindowManager mWindowManager;
+	
 	protected Audio mAudio;
+	protected boolean instructionAlreadyPlayed = false;
+	
 	
 
 	protected int mCurrrentLevel = 0;
@@ -83,13 +86,18 @@ public class GameActivity extends Activity implements View.OnTouchListener,
 	@Override
 	public void onResume(){
 		super.onResume();
-		final Handler handler = new Handler();
-		handler.postDelayed(new Runnable() {
-		  @Override
-		  public void run() {
-			  mAudio.playInstruction(mGameNumber);
-		  }
-		}, 1500);
+		if (!instructionAlreadyPlayed) {
+			instructionAlreadyPlayed = true;
+			final Handler handler = new Handler();
+			handler.postDelayed(new Runnable() {
+			  @Override
+			  public void run() {
+				  mAudio.playInstruction(mGameNumber);
+			  }
+			}, 1600);
+			
+		}
+	
 		
 	}
 
@@ -205,6 +213,7 @@ public class GameActivity extends Activity implements View.OnTouchListener,
 							
 							startActivity(intent);
 							getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+							finish();
 
 						} else {
 							mAudio.playCompleteSound();
